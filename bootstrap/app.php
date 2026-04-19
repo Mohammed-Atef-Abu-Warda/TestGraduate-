@@ -11,8 +11,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        // CSRF protection is now handled by sending X-CSRF-TOKEN in chat.js
     })
+
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
