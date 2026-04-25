@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0287a5446dba8fc5fa4a6be4616148c5",
+    "content-hash": "392e532d0080c20c02724e7252963400",
     "packages": [
         {
             "name": "brick/math",
@@ -2533,16 +2533,16 @@
         },
         {
             "name": "operation-gpt/operation-gpt",
-            "version": "v1.0.1",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ibrahimhassouna2022/OperationGpt.git",
-                "reference": "4048eb653185a5b47e4ee9a24c1745d8ed8d46ff"
+                "reference": "e5e27b95bf067ddc9e546ace5ac8150b7ee0e02c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ibrahimhassouna2022/OperationGpt/zipball/4048eb653185a5b47e4ee9a24c1745d8ed8d46ff",
-                "reference": "4048eb653185a5b47e4ee9a24c1745d8ed8d46ff",
+                "url": "https://api.github.com/repos/Ibrahimhassouna2022/OperationGpt/zipball/e5e27b95bf067ddc9e546ace5ac8150b7ee0e02c",
+                "reference": "e5e27b95bf067ddc9e546ace5ac8150b7ee0e02c",
                 "shasum": ""
             },
             "require": {
@@ -2550,6 +2550,7 @@
                 "illuminate/support": "^11.0|^12.0|^13.0",
                 "php": "^8.1"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2563,16 +2564,15 @@
                     "OperationGpt\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "AI-powered database operations via natural language",
             "support": {
-                "issues": "https://github.com/Ibrahimhassouna2022/OperationGpt/issues",
-                "source": "https://github.com/Ibrahimhassouna2022/OperationGpt/tree/v1.0.1"
+                "source": "https://github.com/Ibrahimhassouna2022/OperationGpt/tree/main",
+                "issues": "https://github.com/Ibrahimhassouna2022/OperationGpt/issues"
             },
-            "time": "2026-04-08T07:06:50+00:00"
+            "time": "2026-04-21T11:13:56+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -8431,7 +8431,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "operation-gpt/operation-gpt": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -47,7 +47,20 @@
 
 <div class="container">
     <h2>نظام الموظفين</h2>
+    @auth
+        <nav style="background: #f8f9fa; padding: 10px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd;">
+            <div>
+                 مرحباً بك، {{ Auth::user()->name }}
+            </div>
 
+            <form action="{{ route('logout') }}" method="POST" style="margin: 0;">
+                @csrf
+                <button type="submit" class="btn btn-danger" style="background: #dc3545; color: white; border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer;">
+                    تسجيل الخروج
+                </button>
+            </form>
+        </nav>
+    @endauth
     @yield('content')
 </div>
 

@@ -2,6 +2,13 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "laravel/laravel",
     "type": "project",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/Ibrahimhassouna2022/OperationGpt.git"
+        }
+    ],
+    
     "description": "The skeleton application for the Laravel framework.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
@@ -9,8 +16,9 @@
         "php": "^8.2",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
-        "operation-gpt/operation-gpt": "^1.0"
+        "operation-gpt/operation-gpt": "dev-main"
     },
+    
     "require-dev": {
         "fakerphp/faker": "^1.23",
         "laravel/pail": "^1.2.2",
@@ -72,4 +80,5 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true
+    
 }

@@ -32,8 +32,7 @@ return [
     |
     */
     'allowed_tables' => [
-        'users' => ['id', 'name', 'email', 'password', 'role', 'created_at', 'updated_at'],
-        'employees' => ['id', 'name', 'email', 'position', 'salary', 'created_at', 'updated_at'],
+        'employees' => ['id','password', 'name', 'email', 'position', 'salary', 'created_at', 'updated_at'],
     ],
 
     /*

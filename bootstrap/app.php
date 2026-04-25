@@ -11,9 +11,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // CSRF protection is now handled by sending X-CSRF-TOKEN in chat.js
+        // هنا يمكنك تخصيص المكان الذي يذهب إليه المستخدم بعد تسجيل الدخول
+        $middleware->redirectTo(
+            guests: '/login',
+            users: '/employees', // اجعل هذا المسار هو الافتراضي للمسجلين
+        );
     })
-
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
