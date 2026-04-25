@@ -114,24 +114,23 @@ class EmployeeController extends Controller implements HasMiddleware
     }
     // دالة عرض صفحة التعديل
     public function edit($id)
-    {
-        $employee = Employee::findOrFail($id);
-        $user = auth()->user();
+{
+    // هنا $id هو المعرف الذي استلمته من الرابط (غالباً الرقم الوظيفي)
+    $employee = Employee::where('employee_number', $id)->firstOrFail();
+    $user = auth()->user();
 
-        // 1. إذا كان المستخدم موظفاً يحاول تعديل بيانات شخص آخر، نمنعه
-        if ($user->role !== 'admin' && $user->id != $id) {
-            abort(403, 'غير مسموح لك بتعديل بيانات موظف آخر.');
-        }
-
-        // 2. إذا كان مديراً، يرى الصفحة الشاملة
-        if ($user->role === 'admin') {
-            return view('employees.edit', compact('employee'));
-        }
-
-        // 3. إذا كان موظفاً، يرى صفحة الإيميل والباسورد فقط
-        return view('employees.edit_profile', compact('employee'));
+    // 1. التحقق: هل المستخدم "أدمن" أو هل رقمه الوظيفي يطابق رقم الموظف المطلوب؟
+    if ($user->role !== 'admin' && $user->employee_number != $employee->employee_number) {
+        abort(403, 'غير مسموح لك بتعديل بيانات موظف آخر.');
     }
 
+    // 2. توجيه العرض
+    if ($user->role === 'admin') {
+        return view('employees.edit', compact('employee'));
+    }
+
+    return view('employees.edit_profile', compact('employee'));
+}
     // تعديل بيانات الموظف
     public function update(Request $request, $employee_number) // غيرنا $id لـ $employee_number للتوضيح
 {
